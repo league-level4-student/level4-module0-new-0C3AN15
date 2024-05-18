@@ -15,10 +15,10 @@ public class EncapsulateTheData {
 	private int itemsReceived;
 	
 	public void setItemsReceived(int itemsReceived) {
-		this.itemsReceived = itemsReceived;
 		if(itemsReceived < 0) {
 			itemsReceived = 0;
 		}
+		this.itemsReceived = itemsReceived;
 	}
 	
 	public int getItemsReceived() {
@@ -35,13 +35,13 @@ public class EncapsulateTheData {
 	private double degreesTurned;
 	
 	public void setDegreesTurned(double degreesTurned) {
-		this.degreesTurned = degreesTurned;
 		if(degreesTurned < 0.0) {
 			degreesTurned = 0.0;
 		}
 		if(degreesTurned > 360.0) {
 			degreesTurned = 360.0;
 		}
+		this.degreesTurned = degreesTurned;
 	}
 	
 	public double getDegreesTurned() {
@@ -58,10 +58,10 @@ public class EncapsulateTheData {
 	private String nomenclature;
 	
 	public void setNomenclature(String nomenclature) {
-		this.nomenclature = nomenclature;
 		if(nomenclature == "") {
 			nomenclature = " ";
 		}
+		this.nomenclature = nomenclature;
 	}
 	
 	public String getNomenclature() {
@@ -87,10 +87,10 @@ public class EncapsulateTheData {
 	private Object memberObj;
 	
 	public void setMemberObj(Object memberObj) {
-		this.memberObj = memberObj;
 		if(memberObj instanceof String) {
 			memberObj = new Object();
 		}
+		this.memberObj = memberObj;
 	}
 	
 	public Object getMemberObj() {

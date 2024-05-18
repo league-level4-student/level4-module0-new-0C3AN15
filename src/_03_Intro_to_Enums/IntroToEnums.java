@@ -27,32 +27,38 @@ public class IntroToEnums {
 
 		// 3. Create an array of StatesOfMatter with all the values using .values().
 		// Hint: Use "StatesOfMatter." as if it were a static method.
-
+		StatesOfMatter[] mats = StatesOfMatter.values();
 		// 4. Ask the user for a state of matter.
-
+		String ans = JOptionPane.showInputDialog("mats");
 		// 5. Iterate through the array and find what the user entered.
 		// Hint: .name() or .toString
-
+		for(int i=0;i<mats.length;i++) {
+			if(mats[i].toString().equals(ans)) {
+				ans = mats[i].toString();
+			}
+			
+		}
 		// 6. Print outs its ordinal(order in the enum list)
 		// Hint: .ordinal()
-
+		System.out.println(ans);
 		// 7. Add a celsiusTemp member variable to StatesOfMatter.
 		// Note: Make sure to encapsulate it.
-
+		
 		// 8. Give it a default value of the temperature each state occurs in water.
 		// Hint: Gas = 100, Liquid(room temp) = 25.55, Solid = 0
 
 		// Example
-		// enum Months{
-		//
-		// JAN(31),FEB(28),MAR(31),APR(30),MAY(31),JUN(30),JUL(31),AUG(31),SEP(30),
-		// OCT(31),NOV(30),DEC(31);
-		//
-		// int daysInMonth;
-		//
-		// private Months(int daysInMonth) {
-		// this.daysInMonth = daysInMonth;
-		// }
+//		 enum Months{
+//		
+//		 JAN(31),FEB(28),MAR(31),APR(30),MAY(31),JUN(30),JUL(31),AUG(31),SEP(30),
+//		 OCT(31),NOV(30),DEC(31);
+//		
+//		 int daysInMonth;
+//		
+//		 private Months(int daysInMonth) {
+//		 this.daysInMonth = daysInMonth;
+//		 }
+//		}
 
 		// 9. Add a convertToFahrenheit method to StatesOfMatter
 		// Hint: Return the conversion: F = (C * 9/5) + 32
