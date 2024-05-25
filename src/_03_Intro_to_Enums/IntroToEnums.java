@@ -62,16 +62,27 @@ public class IntroToEnums {
 
 		// 9. Add a convertToFahrenheit method to StatesOfMatter
 		// Hint: Return the conversion: F = (C * 9/5) + 32
-
+		//aaaaaaaaaaaaa
 		// 10. Create a variable of the StatesOfMatter type and initialize it randomly.
-
+		StatesOfMatter rand = StatesOfMatter.GAS;
 		// 11. Print outs both of its temperatures.
-		
+		System.out.println(rand.celsiusTemp + " " + StatesOfMatter.convertToFahrenheit(rand.celsiusTemp));
 		// 11. Create a switch statement that switches on the variable you created.
 		// Note: When creating the cases, you can omit the "StatesOfMatter."
-
+		
 		// 12. For each case, print your favorite food or drink that uses that state.
 		// e.g. Gas/Boiling for Pasta, Solid/Ice for Popsicles, Liquid for Soda
+		switch(rand) {
+		case SOLID:
+			System.out.println("fries");
+			break;
+		case LIQUID:
+			System.out.println("coke");
+			break;
+		case GAS:
+			System.out.println("fried coke");
+			break;
+		}
 
 	}
 
