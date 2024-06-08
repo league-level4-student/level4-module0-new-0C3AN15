@@ -47,7 +47,11 @@ public class SnakeGame implements ActionListener, KeyListener {
 	private Location foodLocation;
 
 	public SnakeGame() {
-		snake = new Snake(new Location(WIDTH / 2, HEIGHT / 2));
+		Location temp = new Location();
+		temp.x = WIDTH / 2;
+		temp.y = HEIGHT / 2;
+		snake = new Snake(temp /*new Location(WIDTH / 2, HEIGHT / 2)*/);
+		
 
 		window = new JFrame("Snake");
 		panel = new JPanel() {
@@ -116,7 +120,16 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * 
 		 * Hint: KeyEvent.VK_UP.
 		 */
-
+		switch(e) {
+		case KeyEvent.VK_UP:
+			snake.setDirection(Direction.UP);
+		case KeyEvent.VK_DOWN:
+			snake.setDirection(Direction.UP);
+		case KeyEvent.VK_LEFT:
+			snake.setDirection(Direction.UP);
+		case KeyEvent.VK_UP:
+			snake.setDirection(Direction.UP);
+		}
 	}
 
 	private void randomizeFoodLocation() {
