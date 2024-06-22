@@ -116,17 +116,21 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * Use a switch statement to determine if an arrow key is pressed, and set the
 		 * snake's direction accordingly.
 		 * 
-		 * Hint: KeyEvent.VK_UP.
+		 * Hint: KeyEvent.VK_UP
 		 */
 		switch(e.getKeyChar()) {
 		case 'w':
 			snake.setDirection(Direction.UP);
+			break;
 		case 's':
 			snake.setDirection(Direction.DOWN);
+			break;
 		case 'a':
 			snake.setDirection(Direction.LEFT);
+			break;
 		case 'd':
 			snake.setDirection(Direction.RIGHT);
+			break;
 		}
 		
 	}
@@ -166,13 +170,13 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * exit the game.
 		 */
 
-		if(yes == "yes") {
+		if(yes.equals("yes")) {
 			snake.resetLocation();
 			randomizeFoodLocation();
 			timer.restart();
 		}
 		else {
-			quit
+			System.exit(0);
 		}
 		
 	}
@@ -195,8 +199,9 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * feed the snake and randomize the food location.
 		 */
 
-		if(snake.getHeadLocation() == foodLocation) {
-			snake.feed();
+		if(snake.getHeadLocation().getX() == foodLocation.getX() && snake.getHeadLocation().getY() == foodLocation.getY()) {
+			System.out.println("getfood");
+			snake.feed(); feed dont work
 			randomizeFoodLocation();
 		}
 		

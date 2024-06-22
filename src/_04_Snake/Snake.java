@@ -46,13 +46,17 @@ public class Snake {
 		 */
 		switch(currentDirection) {
 		case UP:
-			nextY++;
-		case DOWN:
 			nextY--;
+			break;
+		case DOWN:
+			nextY++;
+			break;
 		case LEFT:
 			nextX--;
+			break;
 		case RIGHT:
 			nextX++;
+			break;
 		}
 		/*
 		 * Change the Location of each SnakeSegment in your snake ArrayList to the
@@ -98,7 +102,16 @@ public class Snake {
 		 * For example, if currentDirection is UP and the passed in direction is DOWN
 		 * this method should return false.
 		 */
-		if(direction == direction.UP && currentDirection == direction.DOWN || direction == direction.DOWN && currentDirection == direction.UP || direction == direction.LEFT && currentDirection == direction.RIGHT || direction == direction.RIGHT && currentDirection == direction.LEFT) {
+		if(direction == direction.UP && currentDirection == direction.DOWN) {
+			return false;
+		}
+		if(direction == direction.DOWN && currentDirection == direction.UP) {
+			return false;
+		}
+		if(direction == direction.LEFT && currentDirection == direction.RIGHT) {
+			return false;
+		}
+		if(direction == direction.RIGHT && currentDirection == direction.LEFT) {
 			return false;
 		}
 		return true;
@@ -130,7 +143,7 @@ public class Snake {
 		 * Complete the method so it returns true if the head of the snake is outside of
 		 * the window and false otherwise.
 		 */
-		if(head.getLocation().x < 0 || head.getLocation().x > SnakeGame.WIDTH || head.getLocation().y < 0 || head.getLocation().y > SnakeGame.HEIGHT) {
+		if(head.getLocation().x < 0 || head.getLocation().x > SnakeGame.WIDTH-1 || head.getLocation().y < 0 || head.getLocation().y > SnakeGame.HEIGHT-1) {
 			return true;
 		}
 		return false;
