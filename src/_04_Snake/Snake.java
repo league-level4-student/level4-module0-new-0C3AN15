@@ -26,6 +26,10 @@ public class Snake {
 	public void feed() {
 		snake.add(new SnakeSegment(snake.get(0).getLocation(), BODY_SIZE));
 	}
+	
+	public void printLength() {
+		System.out.println(snake.size());
+	}
 
 	public Location getHeadLocation() {
 		return head.getLocation();
@@ -66,7 +70,7 @@ public class Snake {
 		 * the snake (index 0) or you will go out of bounds.
 		 */
 		for(int i=snake.size()-1;i>0;i--) {
-			snake.set(i, snake.get(i-1));
+			snake.get(i).setLocation(snake.get(i-1).getLocation());
 		}
 		/*
 		 * Create a new Location object and initialize it with the values calculated in

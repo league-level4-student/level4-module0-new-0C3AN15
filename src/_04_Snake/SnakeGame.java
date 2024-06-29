@@ -92,7 +92,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 
 		// Note: Adjust delay here if you want snake to go slower or faster.
 		//250
-		timer.setDelay(500);
+		timer.setDelay(250);
 
 		timer.start();
 	}
@@ -153,6 +153,9 @@ public class SnakeGame implements ActionListener, KeyListener {
 		if(!(snake.isLocationOnSnake(food))) {
 			foodLocation = food;
 		}
+		else {
+			foodLocation = new Location(rand.nextInt(SnakeGame.WIDTH), rand.nextInt(SnakeGame.HEIGHT));
+		}
 	}
 
 	private void gameOver() {
@@ -200,8 +203,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 */
 
 		if(snake.getHeadLocation().getX() == foodLocation.getX() && snake.getHeadLocation().getY() == foodLocation.getY()) {
-			System.out.println("getfood");
-			snake.feed(); feed dont work
+			snake.feed();
 			randomizeFoodLocation();
 		}
 		
